@@ -27,4 +27,12 @@ spec:
     matchExpressions:
     - key: k8s-app
       operator: Exists
+  storage:
+    volumeClaimTemplate:
+      spec:
+        storageClassName: standard
+        accessModes: [ ReadWriteOnce ]
+        resources:
+          requests:
+            storage: 2Gi
   version: v2.2.1
